@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/rohitkr114/parivesh_backend.git''
+        git 'https://github.com/rohitkr114/parivesh_backend.git'
       }
     }
 
