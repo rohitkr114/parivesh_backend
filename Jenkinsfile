@@ -1,5 +1,5 @@
 pipeline {
-
+  
   agent any
 
   stages {
@@ -13,7 +13,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build rohitkr115/parivesh2-dev
+          dockerImage = docker.build ("rohitkr115/parivesh2-dev")
         }
       }
     }
