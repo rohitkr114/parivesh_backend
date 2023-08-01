@@ -11,7 +11,8 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/rohitkr114/parivesh_backend.git'
+        git branch: 'master', credentialsId: 'd201bdef-d93d-4cde-b490-220e2996e6a9', url: 'https://github.com/rohitkr114/parivesh_backend.git'
+#        git 'https://github.com/rohitkr114/parivesh_backend.git'
       }
     }
 
