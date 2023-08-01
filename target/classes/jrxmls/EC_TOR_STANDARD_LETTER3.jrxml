@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a1d9453-26a3-4ecc-9fc4-0cac04eed330">
+	<property name="net.sf.jasperreports.export.html.use.background.image.to.align" value="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="torIdentificationNumber" class="java.lang.String"/>
+	<field name="applicabilityOfGeneralConditions" class="java.lang.String"/>
+	<field name="category" class="java.lang.String"/>
+	<field name="clearenceType" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="fileNo" class="java.lang.String"/>
+	<field name="issuingAuthority" class="java.lang.String"/>
+	<field name="locationOfProject" class="java.lang.String"/>
+	<field name="nameOfOrganization" class="java.lang.String"/>
+	<field name="nameOfProject" class="java.lang.String"/>
+	<field name="projectIncludedScheduleNo" class="java.lang.String"/>
+	<field name="proponent" class="java.lang.String"/>
+	<field name="proponentEmail" class="java.lang.String"/>
+	<field name="registeredAddress" class="java.lang.String"/>
+	<field name="standardPara1" class="java.lang.String"/>
+	<field name="standardPara2" class="java.lang.String"/>
+	<field name="standardPara3" class="java.lang.String"/>
+	<field name="standardPara4" class="java.lang.String"/>
+	<field name="standardPara5" class="java.lang.String"/>
+	<field name="standardPara6" class="java.lang.String"/>
+	<field name="standardSir" class="java.lang.String"/>
+	<field name="standardSubject" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="torDate" class="java.lang.String"/>
+	<background>
+		<band height="497" splitType="Stretch">
+			<property name="net.sf.jasperreports.export.html.use.background.image.to.align"/>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="124" y="187" width="310" height="310" uuid="6d488493-2e25-4f5c-bc70-bde75a17e58e"/>
+				<imageExpression><![CDATA["C:/Users/CTL 21-015/Downloads/justLogo.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="240" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="53" y="52" width="27" height="23" uuid="bc5f0649-dbe8-470b-9743-c895913af0a4"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[7.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="52" width="463" height="68" uuid="10a377f7-25a9-4ce6-86f5-5632b479386d"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{standardPara6}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="328" y="160" width="226" height="20" uuid="75a4569d-d083-4522-8117-a601df406ec7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="120" width="226" height="20" uuid="140596d0-1562-4461-8d7f-1e75d234c771"/>
+				<textElement textAlignment="Right">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="140" width="226" height="20" uuid="92814f43-051b-4f21-9288-9831bb12278c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name of Authorized Signatory]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="334" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="105" splitType="Stretch">
+			<textField>
+				<reportElement x="281" y="80" width="208" height="20" uuid="841e0a0c-0ef9-4c32-8a8e-448982a8a0b7"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{torIdentificationNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="141" y="80" width="140" height="20" uuid="339b3908-0c44-4a04-9758-a3e8c2a6f9f0"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Green Clearance No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="4" width="554" height="20" uuid="cfd2ff70-b050-4dfd-917d-d720d6f037c8">
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="false"/>
+					<paragraph lineSpacingSize="1.0" tabStopWidth="1">
+						<tabStop position="1" alignment="Left"/>
+					</paragraph>
+				</textElement>
+				<text><![CDATA[Address: CPC Green, Ministry of Environment, Forest and Climate Change, Indira Paryavaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="554" height="20" uuid="720500f8-4a4c-4e92-abd9-dc188d67a521"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="false"/>
+					<paragraph lineSpacing="AtLeast"/>
+				</textElement>
+				<text><![CDATA[Bhawan, Jor Bagh New Delhi - 110003.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="53" width="554" height="20" uuid="56e113a1-5c5a-498a-a12a-217029f56faa"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Bagh New Delhi - 110003]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="554" height="20" uuid="180fb981-0ded-4370-b75b-67e18336c108"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[IA Division, Ministry of Environment, Forest and Climate Change, Indira Paryavaran Bhawan, Jor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="1" height="71" uuid="4f80a642-f00e-4c54-99f5-39e7e9a2b4c0"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="71" uuid="44b64fc6-890d-4818-bc47-eb25b9e876ec"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="553" height="1" uuid="dfde2542-c264-470a-98bb-b95ea626289f"/>
+			</line>
+			<line>
+				<reportElement x="1" y="70" width="553" height="1" uuid="6943686c-2ddb-400a-a6e4-337388bd33bf"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="270" y="0" width="36" height="20" uuid="90a72c30-bdb6-4221-98ff-33cd0d6f2eb5"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

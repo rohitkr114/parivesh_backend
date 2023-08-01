@@ -1,0 +1,14 @@
+package com.backend.repository.postgres.EnvironmentClearance;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.backend.model.EnvironmentClearance.EcRiskFactor;
+
+public interface EcRiskFactorRepository extends JpaRepository<EcRiskFactor, Integer> {
+
+	@Query("select ec from EcRiskFactor ec where ec_partb_id=?1")
+	public Optional<EcRiskFactor> getRecordExist(Integer id);
+}

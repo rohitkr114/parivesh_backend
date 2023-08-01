@@ -1,0 +1,53 @@
+-- FUNCTION: master.get_crz_accept_proposal_list_fnc(integer)
+--DROP FUNCTION IF EXISTS master.get_crz_accept_proposal_list_fnc(integer)
+CREATE OR REPLACE FUNCTION master.get_crz_accept_proposal_list_fnc(
+	in_user_id integer)
+    RETURNS jsonb
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+
+declare
+--proc_eng_ref refcursor:='proc_eng_ref';
+proc_eng_ref text;
+
+begin
+
+select array_to_json(
+       array_agg(
+             row_to_json(tmp)::JSONB 
+         )
+
+)::JSONB 
+ from
+(select cte.id,cte.application_id,cte.proposal_no,cte.status,cte.project_name,cte.workgroup_name, cte.officename, cte.rolename,cte.current_step_id,cte.process_step_mapping_id,cte.role_id,cte.office_id,cte.start_date,cte.proposal_json,cte.process_id, cte.other_property,cte.workgroup_id,cte.main_state,cte.main_district,cte.state_name,
+ cte.district_name,cte.name_of_proponent from 
+(	
+ select aph.id,aph.application_id,aph.proposal_no,ps.status,pd.project_name, pd.project_name as workgroup_name,
+            null as officename,ro.rolename,aph.current_step_id,aph.process_step_mapping_id, ppf.role_id,
+            null as office_id,pa.created_on as start_date,aph.proposal_json,
+			aph.process_id as process_id, pa.other_property,aph.workgroup_id ,aph.created_on,pd.main_state,
+			pd.main_district,
+	(select name from master.state s where s.code=pd.main_state) as state_name,
+	(select name from master.district d where d.code=pd.main_district) as district_name,
+			cd.organization_name as name_of_proponent
+            from process_engine.process_step_authority ps
+			join process_engine.application_process_history aph on ps.app_history_id =aph.id
+			join master.proponent_applications pa on pa.proposal_no = aph.proposal_no
+			join master.crz_proposal_process_file ppf ON ppf.proposal_id=pa.proposal_id
+			join master.project_details pd on pd.id = pa.project_id 
+			join master.caf_details cd on pa.caf_id=cd.id
+			join authentication.role ro on ro.entityid = ppf.role_id
+			where ppf.forward_to_user_id = in_user_id and ps.status in ('Accept')
+)cte 
+group by cte.id,cte.application_id,cte.proposal_no,cte.status,cte.project_name,cte.workgroup_name, cte.officename, cte.rolename,cte.current_step_id,cte.process_step_mapping_id,cte.role_id,cte.office_id,cte.start_date,cte.proposal_json,cte.process_id, cte.other_property,cte.workgroup_id ,
+cte.created_on,cte.main_state,cte.main_district,cte.state_name,cte.district_name,cte.name_of_proponent
+order by cte.created_on desc ) tmp into proc_eng_ref;
+
+return proc_eng_ref;
+end;
+$BODY$;
+
+ALTER FUNCTION master.get_crz_accept_proposal_list_fnc(integer)
+    OWNER TO parivesh_user;

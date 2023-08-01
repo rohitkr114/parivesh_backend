@@ -1,0 +1,25 @@
+package com.backend.crz.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import com.backend.model.CrzProposalConditionMappingDto;
+
+@Repository
+public interface CrzProposalConditionMappingRepository extends JpaRepository<CrzProposalConditionMappingDto, Integer> {
+	
+// remove this TODO
+	@Query(value = "SELECT * FROM master.crz_proposal_condition_mapping u WHERE u.mom_id =?1", nativeQuery = true)
+	List<CrzProposalConditionMappingDto> findByMomId(Integer mom_id);
+	
+	@Query(value = "SELECT * FROM master.crz_proposal_condition_mapping u WHERE u.proposal_id = :proposal_id and u.mom_id = :mom_id order by selected", nativeQuery = true)
+	List<CrzProposalConditionMappingDto> findByProposalId(@Param("proposal_id")Integer proposal_id, @Param("mom_id") Integer mom_id);
+
+	@Modifying
+	@Query(value = "DELETE FROM master.crz_proposal_condition_mapping u WHERE u.mom_id =?1", nativeQuery = true)
+	Integer deleteByMomId(Integer mom_id);
+}

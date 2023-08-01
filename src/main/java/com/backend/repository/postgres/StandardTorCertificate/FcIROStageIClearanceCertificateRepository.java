@@ -1,0 +1,20 @@
+package com.backend.repository.postgres.StandardTorCertificate;
+
+import com.backend.model.StandardTORCertificate.FcIROStageIClearanceCertificate;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FcIROStageIClearanceCertificateRepository extends JpaRepository<FcIROStageIClearanceCertificate,Integer> {
+
+
+    @Query(value = "select st from FcIROStageIClearanceCertificate st where st.proponentId=?1 and st.isActive = true and proposal_no=?2")
+    FcIROStageIClearanceCertificate getFcIROStageIClearanceCertificateInfoBytPropId (Integer proponent_id, String proposalNo);
+
+    @Query(value = "select * from master.fc_IRO_stagei_clearance_certificate st where st.proponent_id=:proponentId and st.is_active = true and st.proposal_no=:proposalNo order by id desc limit 1 ",nativeQuery = true)
+    FcIROStageIClearanceCertificate getFcIROStageIClearanceCertificateInfoByPropId (@Param(value = "proponentId") Integer proponentId,@Param(value = "proposalNo") String proposalNo);
+
+}

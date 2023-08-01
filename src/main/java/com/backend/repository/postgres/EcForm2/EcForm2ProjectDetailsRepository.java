@@ -1,0 +1,15 @@
+package com.backend.repository.postgres.EcForm2;
+
+import com.backend.model.EcForm2.EcForm2ProjectDetails;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+public interface EcForm2ProjectDetailsRepository extends JpaRepository<EcForm2ProjectDetails, Integer> {
+
+    @Query(value="select a.name from master.activities a inner join master.ec_form_2_project_details ep on ep.major_activity_id = a.id where ep.id =:id limit 1", nativeQuery = true)
+    public String getMajorActivityName(@Param(value="id") Integer id);
+
+    @Query(value="select a.item_no from master.activities a inner join master.ec_form_2_project_details ep on ep.major_activity_id = a.id where ep.id =:id limit 1", nativeQuery = true)
+    public String getItemNo(@Param(value="id") Integer id);
+}

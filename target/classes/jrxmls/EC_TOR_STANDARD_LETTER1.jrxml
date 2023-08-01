@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a1d9453-26a3-4ecc-9fc4-0cac04eed330">
+	<property name="net.sf.jasperreports.export.html.use.background.image.to.align" value="false"/>
+
+	<parameter name="barcode" class="java.awt.Image" isForPrompting="false"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="torIdentificationNumber" class="java.lang.String"/>
+	<field name="applicabilityOfGeneralConditions" class="java.lang.String"/>
+	<field name="category" class="java.lang.String"/>
+	<field name="clearenceType" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="fileNo" class="java.lang.String"/>
+	<field name="issuingAuthority" class="java.lang.String"/>
+	<field name="locationOfProject" class="java.lang.String"/>
+	<field name="nameOfOrganization" class="java.lang.String"/>
+	<field name="nameOfProject" class="java.lang.String"/>
+	<field name="projectIncludedScheduleNo" class="java.lang.String"/>
+	<field name="proponent" class="java.lang.String"/>
+	<field name="proponentEmail" class="java.lang.String"/>
+	<field name="registeredAddress" class="java.lang.String"/>
+	<field name="standardPara1" class="java.lang.String"/>
+	<field name="standardPara2" class="java.lang.String"/>
+	<field name="standardPara3" class="java.lang.String"/>
+	<field name="standardPara4" class="java.lang.String"/>
+	<field name="standardPara5" class="java.lang.String"/>
+	<field name="standardPara6" class="java.lang.String"/>
+	<field name="standardSir" class="java.lang.String"/>
+	<field name="standardSubject" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="torDate" class="java.lang.String"/>
+	<background>
+		<band height="497" splitType="Stretch">
+			<property name="net.sf.jasperreports.export.html.use.background.image.to.align"/>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="124" y="187" width="310" height="310" uuid="6d488493-2e25-4f5c-bc70-bde75a17e58e"/>
+				<imageExpression><![CDATA["C:/Users/CTL 21-015/Downloads/justLogo.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="140" y="32" width="280" height="18" uuid="843b00a5-be1c-49be-8b7f-2ce28feaae2d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Government of India]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="50" width="280" height="20" uuid="29cac783-504a-4cf4-ac8f-a83ad756792d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ministry of Environment, Forest and Climate Change]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="70" width="280" height="20" uuid="696ae60d-3027-44af-8802-baab12b8cd2a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centralized Processing Centre - Green]]></text>
+			</staticText>
+			<image>
+				<reportElement x="50" y="32" width="70" height="68" uuid="05dee6bf-497b-4e7a-9c42-0c34d3e919cd"/>
+				<imageExpression><![CDATA["C:/Users/CTL 21-015/Downloads/satmave.jpeg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="489" y="32" width="80" height="60" uuid="2cd84e0d-6a55-4d82-b82b-03706ca456ed"/>
+				<imageExpression><![CDATA["C:/Users/CTL 21-015/Downloads/Nature.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="53" y="40" width="154" height="20" uuid="d0d28224-03bf-416d-898c-0e4d0d3396d6"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date ___________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="39" width="70" height="20" uuid="852a1c9a-9f06-47b0-b06f-c7429f5f3ff2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="400" y="20" width="110" height="100" uuid="54bee396-fd6b-4087-8c94-75c870596d83"/>
+				<imageExpression><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="90" y="100" width="40" height="20" uuid="5ed4b62a-e2cb-43b6-9842-03b68c2ee6c9"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[To,]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="47" width="117" height="20" uuid="f193ccd7-06b5-4450-8f59-d18c51424254"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Proponent’s Email:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="30" width="117" height="20" uuid="23e601c4-94e2-42ba-b9ac-3504593f8845"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Registered Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="-2" width="90" height="20" uuid="5357e9e1-d7c0-4802-81e7-aead26c660ed"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[The Proponent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="14" width="90" height="20" uuid="2d4f8428-b6e2-4b97-b041-6b59fb606b53"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Company Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="207" y="30" width="173" height="17" uuid="b3e3953e-cb71-4489-b8f9-f3c401f0eccf"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registeredAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="14" width="173" height="16" uuid="e18dfbbf-fe14-4589-a712-f9dc26a16280"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="47" width="173" height="20" uuid="eada4771-165b-491c-a22f-d888fb334ab7"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proponentEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="-2" width="173" height="16" uuid="56f3e942-49fd-4fb0-a860-10a92bb88a4d"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proponent}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="334" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="53" y="23" width="37" height="20" uuid="bc5f0649-dbe8-470b-9743-c895913af0a4"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="23" width="430" height="38" uuid="10a377f7-25a9-4ce6-86f5-5632b479386d"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $F{standardSubject}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="53" y="68" width="37" height="20" uuid="e451bbe0-8bc9-43d8-8e2a-87680fa8dd6c"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sir,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="53" y="88" width="457" height="71" uuid="a70126be-61b0-41ce-a752-db228a3762df"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{standardSir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="173" width="226" height="20" uuid="6ea2cb1f-d172-4dd5-8501-e98ce82860f8"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ToR Identification No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="193" width="226" height="20" uuid="f120b92a-ee55-4f01-805c-624ca5728525"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[File No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="213" width="226" height="20" uuid="44dd6af9-0c33-44d4-9da4-3a249cd03349"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clearance Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="233" width="226" height="20" uuid="3bf77f37-ea59-43c7-9a99-6f224c50f505"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="253" width="249" height="20" uuid="86323e35-a23c-43cf-b630-8bbe01b697d0"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project/Activity Included Schedule No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="273" width="226" height="20" uuid="fde9359d-7dbe-495a-adb7-27a0b95fc4f7"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name of Project]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="313" width="226" height="20" uuid="9b5a4b85-d0fe-49ff-b46f-f566a81e3d27"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location of Project (District, State)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="293" width="226" height="20" uuid="fc92b7ca-caf0-41e8-8c05-3575c4bb872d"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name of Company/Organization]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="293" width="36" height="20" uuid="98aa299e-fcfe-42ed-98cb-2a44c277efd0"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[vii)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="253" width="36" height="20" uuid="61d41752-b331-4f93-b4d1-7f04c2726a84"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[v)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="233" width="36" height="20" uuid="204e0d3c-bad7-4bae-8932-ddc9efc16447"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[iv)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="173" width="36" height="20" uuid="3212bf54-e0e8-4b8c-ae66-8254139addcc"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[i)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="273" width="36" height="20" uuid="ddb16f60-ab5a-44ed-8bd1-a21d125b3187"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[vi)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="193" width="36" height="20" uuid="e276c6dd-2a4d-47b7-9bda-c291262cc048"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ii)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="213" width="36" height="20" uuid="1dc67f68-a4a4-4c18-acf8-fe86f0073a05"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[iii)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="362" y="173" width="164" height="20" uuid="e3d43138-9a57-4e57-b40d-3ecd95709824"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{torIdentificationNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="193" width="164" height="20" uuid="2bb52dc9-c3ba-478e-84d5-623c133ade96"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fileNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="213" width="164" height="20" uuid="9896d2a9-0859-4dca-bcab-f7ea6376b4d6"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clearenceType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="233" width="164" height="20" uuid="474a900f-cfd2-4241-b83e-c120036cfbe8"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="253" width="164" height="20" uuid="af747d11-445d-44b1-868b-a68d6c7439a2"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projectIncludedScheduleNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="273" width="164" height="20" uuid="395e5005-ff91-4675-ae8f-1ac745b8012f"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nameOfProject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="293" width="164" height="20" uuid="4fb07647-5cf6-4946-97ce-2c04fc1d392c"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nameOfOrganization}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="313" width="164" height="20" uuid="4ebd6344-ded6-4adb-b7af-13447567fbed"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{locationOfProject}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="313" width="36" height="20" uuid="55f92c89-95b1-4a39-81a1-b13247540177"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[viii)]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="83" splitType="Stretch">
+			<textField>
+				<reportElement x="281" y="47" width="208" height="20" uuid="841e0a0c-0ef9-4c32-8a8e-448982a8a0b7"/>
+				<textElement>
+					<font fontName="Georgia" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{torIdentificationNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="141" y="47" width="140" height="20" uuid="339b3908-0c44-4a04-9758-a3e8c2a6f9f0"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Green Clearance No.:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="270" y="0" width="36" height="20" uuid="90a72c30-bdb6-4221-98ff-33cd0d6f2eb5"/>
+				<textElement>
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
