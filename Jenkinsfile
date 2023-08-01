@@ -1,10 +1,5 @@
 pipeline {
 
-  environment {
-    dockerimagename = "rohitkr115/parivesh2-dev"
-    dockerImage = ""
-  }
-
   agent any
 
   stages {
