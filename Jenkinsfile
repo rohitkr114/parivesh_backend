@@ -13,7 +13,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          sh "docker build -t rohitkr115/parivesh2_dev:4.0
+          sh "docker build -t rohitkr115/parivesh2_dev:4.0"
         }
       }
     }
