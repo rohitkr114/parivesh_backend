@@ -30,7 +30,7 @@ pipeline {
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("latest")
+            dockerImage.push("4.0")
           }
         }
       }
@@ -39,7 +39,7 @@ pipeline {
     stage('Deploying parivesh-backend container to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "parivesh2_dev_deployment.yml", "parivesh2_dev_service.ym")
+          kubernetesDeploy(configs: "parivesh2_dev_deployment.yml", "parivesh2_dev_service.yml")
         }
       }
     }

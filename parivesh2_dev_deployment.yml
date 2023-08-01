@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parivesh2-dev
+spec:
+  selector:
+    matchLabels:
+      app: parivesh2-dev
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: parivesh2-dev
+    spec:
+      containers:
+        - name: parivesh2-dev
+          image: rohitkr115/parivesh2_dev:4.0
+         # imagePullPolicy: Never
+          ports:
+            - containerPort: 9090
