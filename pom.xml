@@ -8,10 +8,6 @@
         <version>2.7.12</version>
         <relativePath/>
     </parent>
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
     <groupId>com.backend</groupId>
     <artifactId>Parivesh</artifactId>
     <version>1.0.0</version>
