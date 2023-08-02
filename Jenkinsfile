@@ -13,7 +13,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build("rohitkr115/parivesh2-dev:4.0")
+          dockerImage = docker.build "rohitkr115/parivesh2-dev:4.0"
         }
       }
     }
