@@ -9,7 +9,15 @@ pipeline {
         git branch: 'master', credentialsId: 'd201bdef-d93d-4cde-b490-220e2996e6a9', url: 'https://github.com/rohitkr114/parivesh_backend.git'
       }
     }
-
+    
+    stage('Maven install') {
+      steps{
+        script {
+          sh 'mvn clean install'
+        }
+      }
+    }
+    
     stage('Build image') {
       steps{
         script {
