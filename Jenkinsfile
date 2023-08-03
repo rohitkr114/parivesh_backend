@@ -1,8 +1,12 @@
 pipeline {
   
   agent any
+  tools {
+        maven 'Maven 3.8.6'
+        jdk 'Java 17.0.4.1'
+    }
   stages {
-
+    
     stage('Checkout Source') {
       steps {
         git branch: 'master', credentialsId: 'd201bdef-d93d-4cde-b490-220e2996e6a9', url: 'https://github.com/rohitkr114/parivesh_backend.git'
