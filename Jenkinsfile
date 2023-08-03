@@ -1,10 +1,6 @@
 pipeline {
   
   agent any
-  tools { 
-        maven 'maven 3.9.4' 
-        jdk 'jdk17' 
-  }
   stages {
 
     stage('Checkout Source') {
@@ -14,11 +10,9 @@ pipeline {
     }
     
     stage('Maven install') {
-      steps{
-        script {
-          sh 'mvn install'
+      withMaven(maven: 'mvn') {
+            sh "mvn install"
         }
-      }
     }
     
     stage('Build image') {
