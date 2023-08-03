@@ -9,17 +9,17 @@ pipeline {
       }
     }
     
-    stage('Maven install') {
-      steps {
-        withMaven(maven: 'mvn') {
-            sh "mvn install"
-        }
-      }
-    }
+    // stage('Maven install') {
+    //   steps {
+    //     withMaven(maven: 'mvn') {
+    //         sh "mvn install"
+    //     }
+    //   }
+    // }
     
     stage('Build image') {
       steps{
-        script {
+        withDocker(docker: 'myDocker') {
           sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
         }
       }
