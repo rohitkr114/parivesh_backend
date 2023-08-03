@@ -19,9 +19,7 @@ pipeline {
     
     stage('Build image') {
       steps{
-        withDocker(docker: 'myDocker') {
           sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
-        }
       }
     }
 
