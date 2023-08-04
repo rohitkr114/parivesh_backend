@@ -14,7 +14,10 @@ pipeline {
             sh "mvn install"
         }
       }
-    
+     stage('Initialize'){
+        def dockerHome = tool 'docker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
     stage('Build image') {
       steps{
           sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
