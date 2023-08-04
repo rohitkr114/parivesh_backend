@@ -16,9 +16,7 @@ pipeline {
       }
     stage('Build image') {
       steps{
-          def dockerHome = tool 'docker' {
           sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
-          }
         }
     }
 
