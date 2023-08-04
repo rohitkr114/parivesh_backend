@@ -11,9 +11,11 @@ pipeline {
     
    stage('Maven install') {
       steps {
+        withMaven(maven: 'mvn') {
             sh "mvn install"
         }
       }
+   }
     stage('Build image') {
       steps{
           sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
