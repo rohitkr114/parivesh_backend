@@ -12,13 +12,13 @@ pipeline {
    stage('Maven install') {
       steps {
         withMaven(maven: 'mvn') {
-            bat "mvn install"
+            sh "mvn install"
         }
       }
    }
     stage('Build image') {
       steps{
-          bat "docker build -t rohitkr115/parivesh2_dev:4.0 ."
+          sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
         }
     }
 
