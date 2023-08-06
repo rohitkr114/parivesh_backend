@@ -18,7 +18,7 @@ pipeline {
    }
     stage('Build image') {
       steps{
-          sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
+          bat "docker build -t rohitkr115/parivesh2_dev:4.0 ."
         }
     }
 
