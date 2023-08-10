@@ -1,6 +1,9 @@
 pipeline {
   
   agent any
+  tools {
+        mvn 'Maven 3.8.8'
+        jdk 'Java 17.0.4.1'
   stages {
     
     stage('Checkout Source') {
