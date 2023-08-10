@@ -1,36 +1,30 @@
 pipeline {
   
-  agent any
   tools {
-        mvn 'Maven 3.8.8'
-        jdk 'Java 17.0.4.1'
-  }
-  stages {
-    
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/rohitkr114/parivesh_backend.git'
+        maven 'Maven 3.8.8'
+        jdk 'jdk'
       }
-    }
-    
-    stage ('Initialize') {
+    stages {
+        stage('Checkout') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
+                git 'https://github.com/rohitkr114/parivesh_backend.git'
             }
         }
-
-   stage ('Build') {
-      steps {
-               sh 'mvn -Dmaven.test.failure.ignore=true install' 
+        
+    stage('Maven build') {
+            steps {  
+        script { 
+                sh 'mvn install'
+              }
             }
-  }
+        }
+      
     stage('Build image') {
       steps{
+        script { 
           sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
         }
+      } 
     }
 
     stage('Pushing Image') {
