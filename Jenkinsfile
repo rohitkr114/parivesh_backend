@@ -27,19 +27,21 @@ pipeline {
       } 
     }
 
-    stage('Pushing Image') {
+    stage('Build and Push Docker Image') {
       environment {
-               registryCredential = 'dockerhub-credentials'
-           }
-      steps{
+        DOCKER_IMAGE = "rohitkr115/parivesh2_dev:${BUILD_NUMBER}"
+        REGISTRY_CREDENTIALS = credentials('dockerhub-credentials')
+      }
+      steps {
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("4.0")
-          }
+            sh 'docker build -t ${DOCKER_IMAGE} .'
+            def dockerImage = docker.image("${DOCKER_IMAGE}")
+            docker.withRegistry('https://index.docker.io/v1/', "dockerhub-credentials") {
+                dockerImage.push()
+            }
         }
       }
     }
-
     stage('Deploying parivesh-backend container to Kubernetes') {
       steps {
         script {
