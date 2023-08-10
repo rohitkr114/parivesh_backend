@@ -11,9 +11,7 @@ pipeline {
     
    stage('Maven install') {
       steps {
-        withMaven(maven: 'mvn') {
             sh "mvn install"
-        }
       }
    }
     stage('Build image') {
