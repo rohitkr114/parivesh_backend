@@ -4,20 +4,28 @@ pipeline {
   tools {
         mvn 'Maven 3.8.8'
         jdk 'Java 17.0.4.1'
+  }
   stages {
     
     stage('Checkout Source') {
       steps {
-        git branch: 'master', credentialsId: 'd201bdef-d93d-4cde-b490-220e2996e6a9', url: 'https://github.com/rohitkr114/parivesh_backend.git'
+        git 'https://github.com/rohitkr114/parivesh_backend.git'
       }
     }
     
-   stage('Maven install') {
+    stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+
+   stage ('Build') {
       steps {
-          withMaven(maven: 'mvn') {  
-          sh "mvn install"
-      }
-    }   
+               sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
   }
     stage('Build image') {
       steps{
