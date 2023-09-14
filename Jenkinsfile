@@ -4,7 +4,7 @@ pipeline {
     maven 'maven'
   }
     environment {
-     REPOSITORY_TAG="rohitkr114/parivesh2_dev:${BUILD_NUMBER}"
+     REPOSITORY_TAG="rohitkr115/parivesh2_dev:${BUILD_NUMBER}"
     }  
     stages {
         stage('Checkout') {
