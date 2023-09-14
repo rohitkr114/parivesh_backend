@@ -1,8 +1,11 @@
 pipeline {
   agent any
   tools {
-        maven 'maven'
-      }
+    maven 'maven'
+  }
+    environment {
+     REPOSITORY_TAG="rohitkr114/parivesh2_dev:${BUILD_NUMBER}"
+      
     stages {
         stage('Checkout') {
             steps {
@@ -21,7 +24,7 @@ pipeline {
     stage('Build image') {
       steps{
         script { 
-          sh "docker build -t rohitkr115/parivesh2_dev:4.0 ."
+          sh "docker build -t ${REPOSITORY_TAG} ."
         }
       } 
     }
