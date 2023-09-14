@@ -43,8 +43,8 @@ pipeline {
     // }
     stage('Deploying parivesh-backend container to Kubernetes') {
       steps {
-               sh 'kubectl apply -f ${WORKSPACE}/parivesh2_dev_deployment.yml /
-                   kubectl apply -f ${WORKSPACE}/parivesh2_dev_service.yml'
+               sh '''kubectl apply -f ${WORKSPACE}/parivesh2_dev_deployment.yml /
+                   kubectl apply -f ${WORKSPACE}/parivesh2_dev_service.yml'''
       }
     }
   }
