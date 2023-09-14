@@ -5,7 +5,7 @@ pipeline {
   }
     environment {
      REPOSITORY_TAG="rohitkr114/parivesh2_dev:${BUILD_NUMBER}"
-      
+    }  
     stages {
         stage('Checkout') {
             steps {
