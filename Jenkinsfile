@@ -6,12 +6,12 @@ pipeline {
     environment {
      REPOSITORY_TAG="rohitkr114/parivesh2_dev:${BUILD_NUMBER}"
     }  
-    // stages {
-    //     stage('Checkout') {
-    //         steps {
-    //             git 'https://github.com/rohitkr114/parivesh_backend.git'
-    //         }
-    //     }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/rohitkr114/parivesh_backend.git'
+            }
+        }
         
     // stage('Maven build') {
     //         steps {  
